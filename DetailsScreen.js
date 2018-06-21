@@ -33,8 +33,9 @@ class DetailsScreen extends React.Component {
             },
         ]
 
-        
 
+
+        
         console.log(this.props.tabnavi.people)
         
         return (
