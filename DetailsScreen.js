@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, View, Button  , StyleSheet, FlatList} from 'react-native';
-//import { ListItem  } from 'react-native-elements'
+import { Text, View, Button  , StyleSheet, FlatList, ScrollView} from 'react-native';
+import { ListItem  } from 'react-native-elements'
 import {connect} from 'react-redux';
 import {counterIncrement , counterDecrement , fetchPeople} from './Actions/tabnavi.actions' 
 
@@ -20,46 +20,75 @@ class DetailsScreen extends React.Component {
 
     render() {
 
-        //BLABLA
+
+        // const list = [
+        //     {
+        //       name: 'Amy Farha',
+        //       subtitle: 'Vice President'
+        //     },
+        //     {
+        //       name: 'Chris Jackson',
+        //       subtitle: 'Vice Chairman'
+        //     },
+        //   ]
+        //   return(
+        //   <View>
+        //     {
+        //       list.map((l, i) => (
+        //         <ListItem
+        //           key={i}
+        //           title={l.name}
+        //           subtitle={l.subtitle}
+        //         />
+        //       ))
+        //     }
+        //   </View>
+        // );
+      
         const list = [
             {
               name: 'Amy Farha',
-              avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
               subtitle: 'Vice President'
             },
             {
               name: 'Chris Jackson',
-              avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
               subtitle: 'Vice Chairman'
             },
         ]
   
-        console.log(this.props.tabnavi.people)
+        //console.log(this.props.tabnavi.people)
         
         return (
-            <View style={{ flex: 2, justifyContent: 'center', alignItems: 'center' , backgroundColor:'tomato' }}>         
+            <View style={{ /*flex: 1, justifyContent: 'center', alignItems: 'center' ,*/ backgroundColor:'yellow' }}>         
                 <View style={{marginTop: 35}}>
-               
                 <Text style={{fontSize:14}}>Contador: {this.props.tabnavi.count1}</Text>            
                 </View>
                 <View> 
-                    <FlatList
+                    <ScrollView>
+                    {/* <FlatList
                         data={this.props.tabnavi.people}
-                        renderItem={({item}) => 
-                            <View>
-                                <Text style={{fontSize:16}}>    {item.name.first}   </Text>
-                                <Text style={{fontSize:16}}>    {item.email}        </Text>
-                                <Text style={{fontSize:16}}>    {item.gender}       </Text>
-                                
-                                
-                            </View>
+                        renderItem={({item}) =>  */}
+                             
+                    
+                            {
+                                this.props.tabnavi.people.map((item, i) => 
+                                    <ListItem
+                                    key={i}
+                                    title={item.name.first}
+                                    subtitle={item.email}
+                                    />
+                                )
                             }
-                    /> 
+                  
+                            {/* }  />  */}
+                    </ScrollView>
                 </View>  
             </View>
       );
     }
   }
+
+
 
   function mapStateToProps(state){
     return state
