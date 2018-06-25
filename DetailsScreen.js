@@ -50,7 +50,7 @@ class DetailsScreen extends React.Component {
                                 <Text style={{fontSize:16}}>    {item.name.first}   </Text>
                                 <Text style={{fontSize:16}}>    {item.email}        </Text>
                                 <Text style={{fontSize:16}}>    {item.gender}       </Text>
-                                <Text style={{fontSize:16}}>    BLABLA      </Text>
+                                
                                 
                             </View>
                             }
