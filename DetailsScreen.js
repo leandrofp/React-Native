@@ -20,6 +20,7 @@ class DetailsScreen extends React.Component {
 
     render() {
 
+        //BLABLA
         const list = [
             {
               name: 'Amy Farha',
@@ -32,10 +33,7 @@ class DetailsScreen extends React.Component {
               subtitle: 'Vice Chairman'
             },
         ]
-
-
-
-        
+  
         console.log(this.props.tabnavi.people)
         
         return (
@@ -52,6 +50,7 @@ class DetailsScreen extends React.Component {
                                 <Text style={{fontSize:16}}>    {item.name.first}   </Text>
                                 <Text style={{fontSize:16}}>    {item.email}        </Text>
                                 <Text style={{fontSize:16}}>    {item.gender}       </Text>
+                                <Text style={{fontSize:16}}>    BLABLA      </Text>
                                 
                             </View>
                             }
