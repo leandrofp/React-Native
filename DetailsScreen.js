@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button  , StyleSheet, FlatList, ScrollView} from 'react-native';
+import { Text, View, Button  , StyleSheet, FlatList} from 'react-native';
 import { ListItem  } from 'react-native-elements'
 import {connect} from 'react-redux';
 import {counterIncrement , counterDecrement , fetchPeople} from './Actions/tabnavi.actions' 
@@ -59,18 +59,16 @@ class DetailsScreen extends React.Component {
         //console.log(this.props.tabnavi.people)
         
         return (
-            <View style={{ /*flex: 1, justifyContent: 'center', alignItems: 'center' ,*/ backgroundColor:'yellow' }}>         
-                <View style={{marginTop: 35}}>
+            <View style={{ flex: 1, justifyContent: 'center', /*alignItems: 'center' ,*/ backgroundColor:'yellow'}}>         
+                <View style={{marginTop: 45}}>
                 <Text style={{fontSize:14}}>Contador: {this.props.tabnavi.count1}</Text>            
                 </View>
                 <View> 
-                    <ScrollView>
-                    {/* <FlatList
+                 
+                    <FlatList
                         data={this.props.tabnavi.people}
-                        renderItem={({item}) =>  */}
-                             
-                    
-                            {
+                        renderItem={({item}) =>         
+                            (
                                 this.props.tabnavi.people.map((item, i) => 
                                     <ListItem
                                     key={i}
@@ -78,10 +76,10 @@ class DetailsScreen extends React.Component {
                                     subtitle={item.email}
                                     />
                                 )
-                            }
+                            )
                   
-                            {/* }  />  */}
-                    </ScrollView>
+                            }  /> 
+              
                 </View>  
             </View>
       );
