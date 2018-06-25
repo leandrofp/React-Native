@@ -19,13 +19,9 @@ class DetailsScreen extends React.Component {
         return (
             <View style={{ flex: 1, justifyContent: 'center', backgroundColor:'yellow'}}>     
                 {/*alignItems: 'center'  NO ANDA!!!!!*/}    
-                <View style={{marginTop: 45}}>
-                <Text style={{fontSize:14}}>Contador: {this.props.tabnavi.count1}</Text>            
-                </View>
-                <View> 
-                 
+                <View>            
                     <FlatList
-                        ListHeaderComponent={<Text>Inicio Pagina</Text>}
+                        ListHeaderComponent={<Text style={{fontSize:14/*, marginTop: 45*/}}>Inicio.  Contador: {this.props.tabnavi.count1}</Text> }
                         data={this.props.tabnavi.people}
                         renderItem={({item}) =>         
                             (
@@ -38,7 +34,7 @@ class DetailsScreen extends React.Component {
                                 )
                             )
                         }
-                        ListFooterComponent={<Text style={{marginBottom:45}}>Fin de Pagina</Text>}
+                        ListFooterComponent={<Text>Fin de Pagina</Text>}
                     /> 
               
                 </View>  
