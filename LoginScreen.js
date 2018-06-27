@@ -29,6 +29,7 @@ class LoginScreen extends React.Component {
     
     render() {
       
+    //lalala
     
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' , backgroundColor:'green'}}>
